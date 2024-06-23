@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Management System</h1>
+        <form id="employeeForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="jobRole">Job Role:</label>
+            <select id="jobRole" name="jobRole" required>
+                <option value="">Select</option>
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Manager">Manager</option>
+                <!-- Add more roles as needed -->
+            </select>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="">Select</option>
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+                <!-- Add more departments as needed -->
+            </select>
+
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" name="salary" required>
+
+            <label for="email">Contact Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="experience">Work Experience:</label>
+            <input type="number" id="experience" name="experience" required>
+
+            <button type="submit">Add Employee</button>
+        </form>
+
+        <h2>Total Employees: <span id="totalEmployees">0</span></h2>
+        <h2>Total Salary: $<span id="totalSalary">0</span></h2>
+
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Job Role</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Email</th>
+                    <th>Experience</th>
+                    <th>Role Type</th>
+                    <th>Fire Employee</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Employee rows will be appended here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="./fack.js"></script>
+</body>
+</html>

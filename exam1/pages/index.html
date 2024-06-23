@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div>
+        <div id="navbar">
+
+        </div>
+    </div>
+
+</body>
+<script type="module" src="/exam1/js/index.js"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <style>
+        /* Add basic styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+        }
+        .container {
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+        <a href="#" onclick="showPage('myBooks')">My Books</a>
+        <a href="#" onclick="showPage('bookmark')">Bookmark</a>
+    </div>
+
+    <div id="home" class="container" style="display: none;">
+        <h2>Add a New Book</h2>
+        <form id="bookForm">
+            <label for="bookName">Book Name:</label>
+            <input type="text" id="bookName" name="bookName" required><br>
+            <label for="authorName">Author Name:</label>
+            <input type="text" id="authorName" name="authorName" required><br>
+            <label for="bookDescription">Book Description:</label>
+            <input type="text" id="bookDescription" name="bookDescription" required><br>
+            <label for="addedDate">Added Date:</label>
+            <input type="date" id="addedDate" name="addedDate" required><br>
+            <label for="bookCategory">Book Category:</label>
+            <select id="bookCategory" name="bookCategory" required>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+                <option value="Science">Science</option>
+                <option value="History">History</option>
+            </select><br>
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
+
+    <div id="dashboard" class="container" style="display: none;">
+        <h2>Dashboard</h2>
+        <div>
+            <label for="filterCategory">Filter by Category:</label>
+            <select id="filterCategory" onchange="filterBooks()">
+                <option value="All">All</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+                <option value="Science">Science</option>
+                <option value="History">History</option>
+            </select>
+        </div>
+        <table id="bookTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                    <th>Added Date</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Buy</th>
+                    <th>Bookmark</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p>Total Books: <span id="totalBooks">0</span></p>
+    </div>
+
+    <div id="myBooks" class="container" style="display: none;">
+        <h2>My Books</h2>
+        <table id="myBooksTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                    <th>Added Date</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="bookmark" class="container" style="display: none;">
+        <h2>Bookmark</h2>
+        <table id="bookmarkTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                    <th>Added Date</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        function showPage(page) {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('myBooks').style.display = 'none';
+            document.getElementById('bookmark').style.display = 'none';
+            document.getElementById(page).style.display = 'block';
+
+            if (page === 'dashboard') {
+                displayBooks();
+            } else if (page === 'myBooks') {
+                displayMyBooks();
+            } else if (page === 'bookmark') {
+                displayBookmarks();
+            }
+        }
+
+        document.getElementById('bookForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            addBook();
+        });
+
+        function addBook() {
+            const bookName = document.getElementById('bookName').value;
+            const authorName = document.getElementById('authorName').value;
+            const bookDescription = document.getElementById('bookDescription').value;
+            const addedDate = document.getElementById('addedDate').value;
+            const bookCategory = document.getElementById('bookCategory').value;
+            const bookPrice = Math.floor(Math.random() * 500) + 100;  // Random price between 100 and 600
+
+            const book = {
+                name: bookName,
+                author: authorName,
+                description: bookDescription,
+                addedDate: addedDate,
+                category: bookCategory,
+                price: bookPrice
+            };
+
+            let books = JSON.parse(localStorage.getItem('book-list')) || [];
+            books.push(book);
+            localStorage.setItem('book-list', JSON.stringify(books));
+
+            alert('Book added successfully!');
+            document.getElementById('bookForm').reset();
+        }
+
+        function displayBooks() {
+            const books = JSON.parse(localStorage.getItem('book-list')) || [];
+            const bookTable = document.getElementById('bookTable').getElementsByTagName('tbody')[0];
+            bookTable.innerHTML = '';
+
+            books.forEach((book, index) => {
+                const row = bookTable.insertRow();
+                row.insertCell(0).innerText = book.name;
+                row.insertCell(1).innerText = book.author;
+                row.insertCell(2).innerText = book.description;
+                row.insertCell(3).innerText = book.addedDate;
+                row.insertCell(4).innerText = book.category;
+                row.insertCell(5).innerText = book.price;
+                const buyCell = row.insertCell(6);
+                buyCell.innerHTML = '<button onclick="buyBook(' + index + ')">Buy</button>';
+                const bookmarkCell = row.insertCell(7);
+                bookmarkCell.innerHTML = '<button onclick="bookmarkBook(' + index + ')">Add</button>';
+            });
+
+            document.getElementById('totalBooks').innerText = books.length;
+        }
+
+        function buyBook(index) {
+            let books = JSON.parse(localStorage.getItem('book-list')) || [];
+            const book = books.splice(index, 1)[0];
+            localStorage.setItem('book-list', JSON.stringify(books));
+
+            let buyList = JSON.parse(localStorage.getItem('buy-list')) || [];
+            buyList.push(book);
+            localStorage.setItem('buy-list', JSON.stringify(buyList));
+
+            displayBooks();
+        }
+
+        function bookmarkBook(index) {
+            let books = JSON.parse(localStorage.getItem('book-list')) || [];
+            const book = books.splice(index, 1)[0];
+            localStorage.setItem('book-list', JSON.stringify(books));
+
+            let bookmarkList = JSON.parse(localStorage.getItem('bookmark-list')) || [];
+            bookmarkList.push(book);
+        } -->

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Management System</h1>
+    <section id="form-section">
+        <form id="employee-form">   
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="job-role">Job Role:</label>
+            <select id="job-role" name="job-role" required>
+                <option value="">Select Role</option>
+                <option value="Developer">Developer</option>
+                <option value="Manager">Manager</option>
+                <option value="Designer">Designer</option>
+            </select><br><br>
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="">Select Department</option>
+                <option value="Engineering">Engineering</option>
+                <option value="HR">HR</option>
+                <option value="Marketing">Marketing</option>
+            </select><br><br>
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" name="salary" required><br><br>
+            <label for="email">Contact Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="experience">Work Experience:</label>
+            <input type="number" id="experience" name="experience" required><br><br>
+            <button type="submit">Add Employee</button>
+        </form>
+    </section>
+    <section id="table-section">
+        <h2>Employee List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Job Role</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Contact Email</th>
+                    <th>Work Experience</th>
+                    <th>Role Type</th>
+                    <th>Fire Employee</th>
+                </tr>
+            </thead>
+            <tbody id="employee-table-body">
+                <!-- Employee rows will be appended here -->
+            </tbody>
+        </table>
+    </section>
+    <section id="count-section">
+        <h2>Total Active Employees: <span id="employee-count">0</span></h2>
+    </section>
+    <section id="count-selary">
+        <h2><h2>total salary </h2> <span id="selary-count"></span></h2>
+
+    </section>
+    <script src="./index.js"></script>
+</body>
+</html>
