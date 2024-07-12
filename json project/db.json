@@ -1,0 +1,25 @@
+{
+  "user": [
+    {
+      "id": "8f79",
+      "name": "",
+      "email": "dharmika@gmail.com",
+      "password": ""
+    },
+    {
+      "id": "907d",
+      "name": "",
+      "email": "dharmia@gmail.com",
+      "password": ""
+    },
+    {
+      "id": "5e21",
+      "name": "",
+      "email": "ravighol1511@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "cart": [],
+  "products": [],
+  "orders": []
+}
