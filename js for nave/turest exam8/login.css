@@ -1,0 +1,58 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('images/i.webp'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    margin: 0;
+  }
+  #navbar {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px 0;
+  }
+  #main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  #login_usar {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+  }
+  .input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  #submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  #submit:hover {
+    background-color: #0056b3;
+  }
+  h4 {
+    color: red;
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+  
